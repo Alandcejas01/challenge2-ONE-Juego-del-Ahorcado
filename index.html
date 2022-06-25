@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <title>Juego del Ahorcado</title>
+  </head>
+  <body>
+    <div id="curtain" class="firtload"></div>
+    <header>
+      <div class="header-container">
+        <img class="logo" src="assets/img/logo.svg" alt="logo-alura" />
+        <button id="toggle-theme" class="boton"><i class="fa-solid fa-rotate"></i></button>
+      </div>
+    </header>
+    <main class="flex-col-center">
+      <section id="main-menu">
+        <button id="start-game" class="boton flex-row-center">Iniciar juego</button>
+        <button id="add-word" class="boton flex-row-center">Agregar nueva palabra</button>
+      </section>
+      <section id="game">
+        <div id="hanged-container" class="flex-col-center">
+          <canvas width="320" height="350"></canvas>
+          <div id="final-word-container" class="flex-col-center"></div>
+        </div>
+
+        <div id="right-letters-container" class="flex-row-center"></div>
+        <div id="wrong-letters-container" class="flex-row-center"></div>
+        <div id="wordgame-container" class="flex-col-center"></div>
+
+        <div id="keyboard-container">
+          <div id="lineQ" class="flex-row-center"></div>
+          <div id="lineA" class="flex-row-center"></div>
+          <div id="lineZ" class="flex-row-center"></div>
+        </div>
+
+        <div id="game-buttons-container" class="flex-row-center">
+          <button id="new-game" class="boton flex-row-center">Nuevo Juego</button>
+          <button id="surrender" class="boton flex-row-center">Desistir</button>
+        </div>
+      </section>
+      <section id="word" class="flex-col-center">
+        <input id="word-input" type="text" placeholder="Añade una palabra..." autocomplete="off"/>
+        <p class="length flex-col-center">Maximo 16 caracteres</p>
+        <button id="saveandplay" class="boton flex-col-center">Guardar en la lista y <strong>jugar</strong></button>
+        <p class="info flex-col-center">Modo 2 o más jugadores Agrega una palabra e intenta que tus amigos adivinen <strong>¡Ojo Que tus amigos no miren la palabra!</strong></p>
+        <button id="playwfriends" class="boton flex-col-center">Jugar la palabra introducida</button>
+        <button id="backtomenu" class="boton flex-col-center">Volver al menu</button>
+      </section>
+    </main>
+    <footer class="flex-col-center">
+      <h2>Alan Cejas</h2>
+      <span class="redes">
+        <a href="https://github.com/Alandcejas01" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/alandcejas01/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      </span>
+    </footer>
+    <script src="https://kit.fontawesome.com/1fa532a5b8.js" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <script src="js/word.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/main-menu.js"></script>
+  </body>
+</html>

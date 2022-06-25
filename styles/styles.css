@@ -1,0 +1,421 @@
+body {
+  background-color: #DBF6E9;
+  transition: 300ms;
+}
+
+/* ****Animaciones**** */
+.firstload{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 0%;
+  height: 136%;
+  background-color: #DBF6E9;
+  z-index: 10;
+  animation: loading;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+
+@keyframes loading{
+  0% {width: 100%; height: 136%; opacity: 1;}
+  100% {width: 100%; height: 136%; opacity: 0;}
+}
+
+.load {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 136%;
+    opacity: 0%;
+    background-color: #DBF6E9;
+    z-index: 10;
+    animation: loading;
+    animation-duration: 1s;
+    animation-timing-function: linear
+}
+
+@keyframes loading{
+    0% {width: 100%; height: 136%; opacity: 0;}
+    50% {width: 100%; height: 136%; opacity: 1;}
+    0% {width: 100%; height: 136%; opacity: 0;}
+}
+
+/* ****Genericas**** */
+
+.boton {
+  align-items: center;
+  font-size: 20px;
+  justify-content: center;
+  padding: 24px;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.flex-col-center {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-row-center {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-col-start {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* ****Cabecera*****/
+
+header {
+  margin: 10px auto;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+}
+
+.header-container {
+  display: flex;
+  width: 80%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+display: flex;
+margin: 15px;
+}
+
+.ocultar {
+  display: none;
+}
+
+#toggle-theme {
+  align-items: center;
+  display: flex;
+  border: none;
+  background-color: #371B58;
+  color: #fff;
+  height: 30px;
+  width: 70px;
+}
+
+/* *****Botones***** */
+#start-game,
+#new-game,
+#saveandplay,
+#backtomenu {
+  width: 280px;
+  padding: 20px;
+  height: 45px;
+  font-weight: 600;
+  border: none;
+  background-color: #9DDFD3;
+  color: #31326F;
+  margin-bottom: 38px;
+}
+
+#add-word,
+#surrender,
+#playwfriends {
+  width: 250px;
+  height: 45px;
+  background-color: #31326F;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+}
+
+#add-word {
+  margin: 0 15px;
+}
+
+#new-game,
+#surrender {
+  width: 150px;
+  margin: 15px 5px;
+  padding: 10px;
+}
+
+main {
+  height: 750px;
+}
+
+/* ****Game Section**** */
+
+.pressed {
+  background-color: #2c2d70;
+  opacity: 0.5;
+}
+
+.red {
+  margin-top: 10px;
+  font-size: 24px;
+  color: #e00000;
+  font-weight: bold;
+}
+
+.green {
+  margin-top: 10px;
+  font-size: 24px;
+  color: #62b400;
+  font-weight: bold;
+}
+
+#right-letters-container {
+  flex-wrap: wrap;
+}
+
+#wrong-letters-container {
+  margin: 15px;
+  text-decoration: line-through;
+  color: #696666;
+}
+
+#wordgame-container {
+  margin: 20px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.keyboard-letter {
+  margin: 6px;
+  width: 24px;
+  height: 35px;
+  cursor: pointer;
+  background-color: #31326F;
+  border-radius: 40%;
+  color: #fff;
+}
+
+.underscore {
+  margin: 10px 5px;
+  width: 24px;
+  height: 30px;
+  border-bottom: 4px solid #000;
+  font-size: 32px;
+  color: #31326F;
+  font-weight: bold;
+}
+
+/* ****NewWord Section**** */
+
+#word-input {
+  border: none;
+  background: transparent;
+  font-size: 26px;
+  outline: none;
+  resize: none;
+}
+
+.info,
+.length {
+  color: #31326F;
+}
+
+.info {
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+.length {
+  font-size: 20px;
+}
+#backtomenu {
+  margin-top: 80px;
+}
+
+/* ****Footer**** */
+
+footer {
+  height: 75px;
+  background-color: #31326F;
+  color: #DBF6E9;
+}
+
+footer i {
+  color: #9DDFD3;
+}
+
+footer h2 {
+  text-align: center;
+  margin: 5px auto;
+}
+
+.redes i { 
+  font-size: 24px;
+  margin: 5px 25px;
+}
+
+
+/* ****Dark Theme**** */
+
+body.dark-theme{
+  background-color: #7858A6;
+  transition: 300ms;
+}
+
+body.dark-theme .firstload,
+body.dark-theme .load{
+  background-color: #7858A6;
+}
+
+body.dark-theme #toggle-theme {
+  border: none;
+  background-color: #DBF6E9;
+  color: #31326F;
+}
+
+body.dark-theme #start-game, 
+body.dark-theme #surrender,
+body.dark-theme #saveandplay,
+body.dark-theme #backtomenu {
+  background-color: #9624c5;
+  color: #fff;
+}
+
+body.dark-theme #add-word,
+body.dark-theme #new-game,
+body.dark-theme #playwfriends {
+  background-color: #511f8c;
+  color: #fff;
+}
+
+body.dark-theme .underscore {
+  color: #45085f;
+}
+
+body.dark-theme .keyboard-letter {
+  background-color: #511f8c;
+  color: #fff;
+}
+
+body.dark-theme .keyboard-letter.pressed {
+  background-color: #632f9e;
+}
+
+body.dark-theme #wrong-letters-container {
+  color: rgb(65, 59, 59);
+}
+
+body.dark-theme .red {
+  color: #ad0000;
+}
+body.dark-theme .green {
+  color: #005a1ecc;
+}
+
+body.dark-theme .info,
+body.dark-theme .length {
+  color: #340c45;
+}
+
+body.dark-theme #word-input::placeholder {
+  color: #d26efd;
+}
+
+body.dark-theme footer{
+  background-color: #511f8c;
+  color: #fff;
+}
+
+body.dark-theme footer i {
+  color: #9572d0;
+}
+
+/* ****Media Queries**** */
+
+@media screen and (min-height:799.98px){
+  header {
+    height: 95px;
+  }
+  
+  main {
+    height: 810px;
+  }
+
+  footer {
+    height: 75px;
+  }
+
+  .firstload{
+    height: 123%;
+  }
+  
+  @keyframes loading{
+    0% {width: 100%; height: 123%; opacity: 1;}
+    100% {width: 100%; height: 123%; opacity: 0;}
+  }
+  
+  .load {
+      height: 123%;
+  }
+  
+  @keyframes loading{
+    0% {width: 100%; height: 123%; opacity: 0;}
+    50% {width: 100%; height: 123%; opacity: 1;}
+    0% {width: 100%; height: 123%; opacity: 0;}
+  }
+  
+}
+
+@media screen and (min-height:899.98px){
+
+  .firstload{
+    height: 111.1%;
+  }
+  
+  @keyframes loading{
+    0% {width: 100%; height: 111.1%; opacity: 1;}
+    100% {width: 100%; height: 111.1%; opacity: 0;}
+  }
+  
+  .load {
+      height: 111.1%;
+  }
+  
+  @keyframes loading{
+    0% {width: 100%; height: 111.1%; opacity: 0;}
+    50% {width: 100%; height: 111.1%; opacity: 1;}
+    0% {width: 100%; height: 111.1%; opacity: 0;}
+  }
+}
+
+@media screen and (min-height:949.98px) {
+
+  main {
+    height: 840px;
+  }
+
+  footer {
+    height: 75px;
+  }
+
+  .firstload{
+    height: 100.5%;
+  }
+  
+  @keyframes loading{
+    0% {width: 100%; height: 100.5%; opacity: 1;}
+    100% {width: 100%; height: 100.5%; opacity: 0;}
+  }
+  
+  .load {
+      height: 100.5%;
+  }
+  
+  @keyframes loading{
+      0% {width: 100%; height: 100.5%; opacity: 0;}
+      50% {width: 100%; height: 100.5%; opacity: 1;}
+      0% {width: 100%; height: 100.5%; opacity: 0;}
+  }
+  
+}
