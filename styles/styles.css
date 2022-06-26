@@ -332,6 +332,19 @@ body.dark-theme footer i {
 }
 
 /* ****Media Queries**** */
+@media screen and (max-height:799.97px){
+  header {
+    height: 95px;
+  }
+  
+  main {
+    height: 810px;
+  }
+  
+  footer {
+    height: 75px;
+  }
+}
 
 @media screen and (min-height:799.98px){
   header {
