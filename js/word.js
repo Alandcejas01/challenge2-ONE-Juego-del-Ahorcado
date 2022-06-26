@@ -5,6 +5,14 @@ const backToMenu = document.querySelector("#backtomenu");
 
 let wordSelected;
 
+function eliminarDiacriticosyEspacios(texto) {
+  return texto
+  .normalize('NFD')
+  .replace(/([^n\u0300-\u036f]|n(?!\u0303(?![\u0300-\u036f])))[\u0300-\u036f]+/gi,"$1")
+  .replace(/ /g, "")
+  .normalize();
+}
+
 function wordmenu() {
   mainMenuSection.style.display = "none";
   gameSection.style.display = "none";
@@ -21,7 +29,7 @@ function wordmenu() {
     } else if (expresion.test(w.data)) {
       tempInput = inputWord.value;
     } else {
-      inputWord.value = tempInput;
+      inputWord.value= tempInput;
     }
   });
 }
@@ -31,7 +39,7 @@ function saveWord() {
   /* Validacion que no este vacio y que no supere los 16 caracteres*/
   if (inputWord.value != "") {
     if (inputWord.value.length <= 16) {
-      wordList.push(inputWord.value.toUpperCase());
+      wordList.push(eliminarDiacriticosyEspacios(inputWord.value).toUpperCase());
       inputWord.value = "";
       createBoardGame();
     } else {
@@ -45,7 +53,7 @@ function saveWord() {
 function playWord(){
   if (inputWord.value != "") {
     if (inputWord.value.length <= 16) {
-      wordSelected = inputWord.value;
+      wordSelected = eliminarDiacriticosyEspacios(inputWord.value);
       gameNewWord(wordSelected);
     } else {
       alert("La palabra supera los 16 caracteres");

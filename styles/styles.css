@@ -344,6 +344,25 @@ body.dark-theme footer i {
   footer {
     height: 75px;
   }
+  
+  .firstload{
+    height: 132%;
+  }
+  
+  @keyframes loading{
+    0% {width: 100%; height: 132%; opacity: 1;}
+    100% {width: 100%; height: 132%; opacity: 0;}
+  }
+  
+  .load {
+      height: 132%;
+  }
+  
+  @keyframes loading{
+    0% {width: 100%; height: 132%; opacity: 0;}
+    50% {width: 100%; height: 132%; opacity: 1;}
+    0% {width: 100%; height: 132%; opacity: 0;}
+  }
 }
 
 @media screen and (min-height:799.98px){
@@ -360,22 +379,22 @@ body.dark-theme footer i {
   }
 
   .firstload{
-    height: 123%;
+    height: 123.5%;
   }
   
   @keyframes loading{
-    0% {width: 100%; height: 123%; opacity: 1;}
-    100% {width: 100%; height: 123%; opacity: 0;}
+    0% {width: 100%; height: 123.5%; opacity: 1;}
+    100% {width: 100%; height: 123.5%; opacity: 0;}
   }
   
   .load {
-      height: 123%;
+      height: 123.5%;
   }
   
   @keyframes loading{
-    0% {width: 100%; height: 123%; opacity: 0;}
-    50% {width: 100%; height: 123%; opacity: 1;}
-    0% {width: 100%; height: 123%; opacity: 0;}
+    0% {width: 100%; height: 123.5%; opacity: 0;}
+    50% {width: 100%; height: 123.5%; opacity: 1;}
+    0% {width: 100%; height: 123.5%; opacity: 0;}
   }
   
 }
