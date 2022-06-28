@@ -44,7 +44,7 @@ function randomletterUnlock(){
 
 function hint(){
   if(i != 0){
-    if(keyWord.length >= 4){
+    if(keyWord.length > 4){
       if(i == 1){
         randomletterUnlock();
         i--;
@@ -53,7 +53,7 @@ function hint(){
         randomletterUnlock();
         i--;
       }
-    } else if(keyWord.length < 4){
+    } else if(keyWord.length <= 4){
       randomletterUnlock();
       i -= 2;
       hintButton.classList.add("pressed")
