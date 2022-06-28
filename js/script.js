@@ -1,4 +1,6 @@
-let wordList =["HTML", "CSS", "JAVASCRIPT", "GIT", "GITHUB", "ALURA", "ORACLE", "ONE", "PROGRAMACION", "WEB", "IDE", "PAGINA"];
+// let wordList =["HTML", "CSS", "JAVASCRIPT", "GIT", "GITHUB", "ALURA", "ORACLE", "ONE", "PROGRAMACION", "WEB", "IDE", "PAGINA"];
+
+let wordList =["PERRO", "AUTO", "CASA", "DENTISTA", "SALUD", "ESPERANZA", "POLICIA", "JUGUETE", "CAMA", "MILANESA", "PIZZA", "EDUCACION", "MADERA", "COLORES", "LADRILLO", "TAZA", "YOUTUBE"]
 
 function firstloading() {
   mainMenu()

@@ -41,9 +41,14 @@
           <button id="new-game" class="boton flex-row-center">Nuevo Juego</button>
           <button id="surrender" class="boton flex-row-center">Desistir</button>
         </div>
+        <div class="flex-col-center">
+          <button id="hint" class="boton">Pista</button>
+        </div>
       </section>
       <section id="word" class="flex-col-center">
-        <input id="word-input" type="text" placeholder="Añade una palabra..." autocomplete="off" spellcheck="false"/>
+        <div id="wordinput-container" class="flex-col-center">
+          <input id="word-input" type="text" placeholder="Añade una palabra..." autocomplete="off" spellcheck="false"/>
+        </div>
         <p class="length flex-col-center">Maximo 16 caracteres</p>
         <button id="saveandplay" class="boton flex-col-center">Guardar en la lista y <strong>jugar</strong></button>
         <p class="info flex-col-center">Modo 2 o más jugadores Agrega una palabra e intenta que tus amigos adivinen <strong>¡Ojo Que tus amigos no miren la palabra!</strong></p>

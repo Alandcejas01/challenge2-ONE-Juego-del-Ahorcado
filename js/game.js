@@ -7,15 +7,59 @@ const arrayA = ["A", "S", "D", "F", "G", "H", "J", "K", "L", "Ñ"];
 const arrayZ = ["Z", "X", "C", "V", "B", "N", "M"];
 
 let keyword, gameOver, underscores, lettersUsed, wrongLetters, letter, index, search, letterLeft, attempt;
+let i = 2;
 
 let finalMsg = document.querySelector("#final-word-container");
 let wordGame = document.querySelector("#wordgame-container");
-let wrongLetterContainer = document.querySelector("#wrong-letters-container")
+let wrongLetterContainer = document.querySelector("#wrong-letters-container");
+let hintButton = document.querySelector("#hint");
+
+hintButton.addEventListener("click", hint);
 
 function randomWord(){
   return wordList[Math.floor(Math.random() * wordList.length)];
 }
 
+function randomletterUnlock(){
+  let letterUnlock = Math.floor(Math.random() * keyWord.length);
+  let keyWordLetter = keyWord[letterUnlock];
+  if(!lettersUsed.includes(keyWordLetter)){
+    search = 0;
+    index = keyWord.indexOf(keyWordLetter, search)
+    if(index != -1){
+      lettersUsed.push(keyWordLetter);
+      while(index != -1){
+        letterLeft--;
+        underscores[index].textContent = keyWordLetter;
+        search = index +1;
+        index = keyWord.indexOf(keyWordLetter, search);
+        }
+      }
+    } else{
+      return randomletterUnlock();
+    }
+  let letterDivUnlocked = document.querySelector(`#${keyWordLetter}`);
+  letterDivUnlocked.classList.add("pressed");
+  }
+
+function hint(){
+  if(i != 0){
+    if(keyWord.length >= 4){
+      if(i == 1){
+        randomletterUnlock();
+        i--;
+        hintButton.classList.add("pressed")
+      } else {        
+        randomletterUnlock();
+        i--;
+      }
+    } else if(keyWord.length < 4){
+      randomletterUnlock();
+      i -= 2;
+      hintButton.classList.add("pressed")
+    }
+  }
+}
 /* Creaciones de los guiones bajos para las letras de la palabra secreta */
 
 function cUnderscores(){
@@ -135,10 +179,13 @@ function createBoardGame(){
   mainMenuSection.style.display = "none";
   gameSection.style.display = "block";
   wordSection.style.display = "none";
+  hintButton.style.display = "block";
+  hintButton.classList.remove("pressed");
 
   keyWord = randomWord();
   letterLeft = keyWord.length;
   attempt = 0;
+  i = 2;
   gameOver = false;
   lettersUsed = [];
   wrongLetters = [];
@@ -160,6 +207,7 @@ function gameNewWord(newWord){
   mainMenuSection.style.display = "none";
   gameSection.style.display = "block";
   wordSection.style.display = "none";
+  hintButton.style.display ="none";
 
   keyWord = newWord.toUpperCase();
   letterLeft = keyWord.length;
